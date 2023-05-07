@@ -1,0 +1,13 @@
+{
+    "rust-analyzer.checkOnSave.allTargets": false,
+    "rust-analyzer.checkOnSave.extraArgs": [
+        "--target",
+        "riscv32imc-unknown-none-elf"
+    ],
+    "rust-analyzer.linkedProjects": [
+        "./Cargo.toml",
+        "./Cargo.toml",
+        "./Cargo.toml",
+        "./Cargo.toml"
+    ]
+}
