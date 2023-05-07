@@ -1,22 +1,18 @@
-# Getting Started
+# OLED Rust Fun
 
-1. install cargo generate `cargo install cargo-generate`
-2. run `cargo generate --git https://github.com/dcaponi/esp32-rust-template`
-3. ensure the project builds & links `cargo build`
-4. Now quit f*cking around and honk a bunch of one bits to your device -BCR
+## Getting Started
+I used a ESP32 C3 board. I hooked the power to the 3.3V pin, ground to ground (obviously) and clock and data to pins 6 and 7 respectively.
 
-# Other Things You Might Need
-## Linux (Ubuntu)
+Then build and `espflash <wherever your esp32 is mounted> target/riscv32imc-unknown-none-elf/debug/oled --monitor`
 
-*Low Level Build & Flash tools* 
-```
+## Things you might need
+Low Level Build & Flash tools
+
 sudo apt-get install -y clang llvm flex bison gperf cmake
 ninja-build ccache libffi-devlibssl-dev libusb-1.0-0 libudev-dev
 dfu-util package-config
- ```
+espflash, ldrpoxy cargo install espflash ldproxy
 
-*espflash, ldrpoxy* `cargo install espflash ldproxy`
+llvm tools preview rustup component add llvm-tools-preview
 
-*llvm tools preview* `rustup component add llvm-tools-preview`
-
-*Add the risc-v target for esp32 devices* `rustup target add riscv32imc-unknown-none-elf`
+Add the risc-v target for esp32 devices rustup target add riscv32imc-unknown-none-elf
